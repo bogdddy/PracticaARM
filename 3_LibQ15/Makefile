@@ -1,10 +1,10 @@
 #-------------------------------------------------------------------------------
 # Example Makefile to build a library and to test the functions of each module
 # Authors: Santiago Romani, Pere Millán
-# Date: April 2021, March 2022, March 2023
+# Date: April 2023
 #-------------------------------------------------------------------------------
-#	Programador/a 1: xxx.xxx@estudiants.urv.cat
-#	Programador/a 2: yyy.yyy@estudiants.urv.cat
+#	Programador/a 1: bogdan.struk@estudiants.urv.cat
+#	Programador/a 2: gonzalo.nieto@estudiants.urv.cat
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
@@ -22,8 +22,8 @@ LDFLAGS := -z max-page-size=0x8000
 libQ15.a: build/Q15.o
 	arm-none-eabi-ar -rs libQ15.a build/Q15.o
 
-build/Q15.o: sources/Q15.c includes/Q15.h
-	arm-none-eabi-gcc $(CCFLAGS) -c sources/Q15.c -o build/Q15.o
+build/Q15.o: sources/Q15.s includes/Q15.i
+	arm-none-eabi-gcc $(CCFLAGS) -c sources/Q15.s -o build/Q15.o
 
 
 #-------------------------------------------------------------------------------
